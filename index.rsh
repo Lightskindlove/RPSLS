@@ -4,7 +4,7 @@ const [isHand, ROCK, SPOCK, PAPER, LIZARD, SCISSORS] = makeEnum(5);
 const [isOutcome, DRAW, S_WINS, L_WINS] = makeEnum(3);
 
 const winner = (handSheldon, handLeonard) => {
-  const tmp = (((handSheldon + 1) - (handLeonard + 1)) + 5) % 5;
+  const tmp = ((handSheldon + 1) + (5 - (handLeonard + 1))) % 5;
   const res = tmp > 0 && tmp < 3 ? 1 : tmp > 0 && tmp > 2 ? 2 : 0;
   return res;
 };
@@ -114,7 +114,7 @@ export const main = Reach.App(() => {
       );
       checkCommitment(commitSheldon, saltSheldon, handSheldon);
 
-      const winingNums = (((handSheldon + 1) - (handLeonard + 1)) + 5) % 5;
+      const winingNums = ((handSheldon + 1) + (5 - (handLeonard + 1))) % 5;
       if (winingNums == 0) {
         each([Sheldon, Leonard], () => {
           interact.seeOutcomeDraw();
