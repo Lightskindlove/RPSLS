@@ -79,6 +79,9 @@ class Player extends React.Component {
   seeOutcomeRounds(i) {
     this.setState({ view: "RoundDone", outcome: intToOutcome[i] });
   }
+  seeOutcomeDraw() {
+    this.setState({view: "RoundDraw"});
+  }
   informTimeout() {
     this.setState({ view: "Timeout" });
   }
@@ -125,6 +128,7 @@ class Attacher extends Player {
   async acceptWager(wagerAtomic) {
     // Fun([UInt], Null)
     const wager = reach.formatCurrency(wagerAtomic, 4);
+    // would love to display the rounds as well in accept terms
     return await new Promise((resolveAcceptedP) => {
       this.setState({ view: "AcceptTerms", wager, resolveAcceptedP });
     });

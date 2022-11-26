@@ -69,6 +69,12 @@ exports.RoundDone = class extends React.Component {
   }
 };
 
+exports.RoundDraw = class extends React.Component {
+  render() {
+    return <div>It was a draw! Please pick again.</div>;
+  }
+};
+
 exports.Timeout = class extends React.Component {
   render() {
     return <div>There's been a timeout. (Someone took too long.)</div>;
