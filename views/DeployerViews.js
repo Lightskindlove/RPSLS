@@ -50,7 +50,7 @@ exports.SetRounds = class extends React.Component {
         />{" "}
         rounds
         <br />
-        <button onClick={() => parent.SetRounds(rounds)}>
+        <button onClick={() => parent.setRounds(rounds)}>
           set an odd number of rounds
         </button>
       </div>
