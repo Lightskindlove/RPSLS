@@ -1,7 +1,7 @@
 import React from "react";
-import AppViews from "./views/AppViews";
-import DeployerViews from "./views/DeployerViews";
-import AttacherViews from "./views/AttacherViews";
+import AppViews from "./views/AppViews.js";
+import DeployerViews from "./views/DeployerViews.js";
+import AttacherViews from "./views/AttacherViews.js";
 import { renderDOM, renderView } from "./views/render.js";
 import "./index.css";
 import * as backend from "./build/index.main.mjs";
@@ -17,7 +17,7 @@ reach.setWalletFallback(
   })
 );
 
-const handToInt = { ROCK: 1, SPOCK: 2, PAPER: 3, LIZARD: 4, SCISSORS: 5 };
+const handToInt = { ROCK: 0, SPOCK: 1, PAPER: 2, LIZARD: 3, SCISSORS: 4 };
 const intToOutcome = ["Draw!", "Sheldon wins!", "Leonard Wins!"];
 const { standardUnit } = reach;
 const defaults = {
