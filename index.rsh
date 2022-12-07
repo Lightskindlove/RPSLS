@@ -42,7 +42,7 @@ export const main = Reach.App(() => {
   const Leonard = Participant("Leonard", {
     // interact interface
     ...player,
-    acceptWager: Fun([UInt], Null),
+    acceptWager: Fun([UInt, UInt], Null),
   });
   init();
 
@@ -63,7 +63,7 @@ export const main = Reach.App(() => {
   const round = rounds % 2 == 0 ? rounds - 1 : rounds;
 
   Leonard.only(() => {
-    interact.acceptWager(wager);
+    interact.acceptWager(wager, rounds);
   });
   Leonard.pay(wager).timeout(relativeTime(deadline), () =>
     closeTo(Sheldon, informTimeout)

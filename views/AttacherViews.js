@@ -55,7 +55,7 @@ exports.AcceptTerms = class extends React.Component {
       <div>
         The terms of the game are:
         <br /> Wager: {wager} {standardUnit}
-        <br /> Rounds: {rounds} rounds
+        <br /> Rounds: {rounds}
         <br />
         <button
           disabled={disabled}
